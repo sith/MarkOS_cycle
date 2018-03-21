@@ -11,3 +11,6 @@ target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_commons)
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 
 add_subdirectory(test)
+
+install(DIRECTORY "src/"
+        DESTINATION "/Users/oleksandrabaukh/workspace/MarkOS/cycle")
