@@ -11,6 +11,8 @@
 
 #include "MockCycleListener.h"
 
+using mark_os::cycle::Cycle;
+
 class CycleTest : public ::testing::Test {
 protected:
     Cycle cycle;

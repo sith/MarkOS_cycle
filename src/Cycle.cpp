@@ -4,22 +4,24 @@
 
 #include "Cycle.h"
 
+namespace mark_os {
+    namespace cycle {
+        unsigned long Cycle::getCycle() const {
+            return cycleNumber;
+        }
 
-unsigned long Cycle::getCycle() const {
-    return cycleNumber;
-}
+        void Cycle::next() {
+            cycleNumber++;
+            auto iteratorPointer = listeners->iterator();
+            Iterator<CycleListener> &iterator = *iteratorPointer.get();
+            while (iterator.hasNext()) {
+                CycleListener *pListener = iterator.next();
+                pListener->onEvent(cycleNumber);
+            }
+        }
 
-void Cycle::next() {
-    cycleNumber++;
-    auto iteratorPointer = listeners->iterator();
-    Iterator<CycleListener> &iterator = *iteratorPointer.get();
-    while (iterator.hasNext()) {
-        CycleListener *pListener = iterator.next();
-        pListener->onEvent(cycleNumber);
+        List<CycleListener> *Cycle::getListeners() const {
+            return listeners;
+        }
     }
 }
-
-List<CycleListener> *Cycle::getListeners() const {
-    return listeners;
-}
-
