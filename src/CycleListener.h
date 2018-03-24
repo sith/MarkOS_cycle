@@ -5,11 +5,13 @@
 #ifndef MARK1_CYCLELISTENER_H
 #define MARK1_CYCLELISTENER_H
 
-
-class CycleListener {
-public:
-    virtual void onEvent(unsigned long cycleNumber)=0;
-};
-
+namespace mark_os {
+    namespace cycle {
+        class CycleListener {
+        public:
+            virtual void onEvent(unsigned long cycleNumber)=0;
+        };
+    }
+}
 
 #endif //MARK1_CYCLELISTENER_H

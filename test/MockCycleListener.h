@@ -7,7 +7,7 @@
 
 #include "gmock/gmock.h"
 
-class MockCycleListener : public CycleListener {
+class MockCycleListener : public mark_os::cycle::CycleListener {
 public:
     MOCK_METHOD1(onEvent, void(unsigned long
             cycleNumber));
