@@ -13,13 +13,13 @@ namespace mark_os {
     namespace cycle {
         class Cycle {
             unsigned long cycleNumber = 0;
-            List<CycleListener> *listeners = new LinkedList<CycleListener>();
+            mark_os::commons::List<CycleListener> *listeners = new mark_os::commons::LinkedList<CycleListener>();
         public:
             unsigned long getCycle() const;
 
             void next();
 
-            List<CycleListener> *getListeners() const;
+            mark_os::commons::List<CycleListener> *getListeners() const;
 
         };
     }

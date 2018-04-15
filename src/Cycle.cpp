@@ -13,14 +13,14 @@ namespace mark_os {
         void Cycle::next() {
             cycleNumber++;
             auto iteratorPointer = listeners->iterator();
-            Iterator<CycleListener> &iterator = *iteratorPointer.get();
+            mark_os::commons::Iterator<CycleListener> &iterator = *iteratorPointer.get();
             while (iterator.hasNext()) {
                 CycleListener *pListener = iterator.next();
                 pListener->onEvent(cycleNumber);
             }
         }
 
-        List<CycleListener> *Cycle::getListeners() const {
+        mark_os::commons::List<CycleListener> *Cycle::getListeners() const {
             return listeners;
         }
     }
